@@ -1,0 +1,26 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <h3 class="alert alert-success" style="display: block;margin-bottom: 10%;"><center>Envoi de devis</center></h3>
+  <form action ="" data-url="controleur/getDevis.php" name='devis' method="post" id="form_devis">
+    <div>
+      <div class="form-group col-md-6 col-sm-6">
+        <label>Représentants :</label>
+        <select class="representants form-control" name="representant" style="height:40px;position: relative;top: 10px;"></select>
+      </div>
+      <div class="form-group col-md-6 col-sm-6">
+        <label>Date de début des dévis :</label>
+        <input type="date" class="form-control" name="datess" style="height:40px;position: relative;top: 10px;">
+      </div>
+    </div></br>
+    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+      <center>
+        <button style="background-color:#DD0B19;color:white;width: 160px;border:none;height: 35px;" type ="submit">
+          <span class="glyphicon glyphicon-ok-sign"></span> Rechercher
+        </button>
+      </center>
+    </div>
+  </form>
+
+  <div class="listDevis" style="margin-top:20%;max-height: 100%;">
+    
+  </div>
+</div>

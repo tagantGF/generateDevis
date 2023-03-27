@@ -1,0 +1,103 @@
+body{
+	background:#f1f2f6;
+	-webkit-background-size: cover; /* pour Chrome et Safari */
+	-moz-background-size: cover; /* pour Firefox */
+	-o-background-size: cover; /* pour Opera */
+	background-size: cover; /* version standardisée */
+}
+body .inputAuth{
+	border-radius: 5000px;
+}
+body .message{
+    position: fixed;
+    width: 50%;
+    height: 30%;
+    top: 35%;
+    left: 25%;
+	z-index: 99999999;
+}
+body .navbar-light .navbar-toggler{
+	background-color: white !important;
+}
+body .mask_result_body{
+    height: 35%;
+    width: 100%;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    background-color: #f1f2f6;
+}
+body #contenu{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+body #navbar_entete{
+	background-color: #103F6B;
+	z-index: 9999;
+}
+body #accueil_corps_search_bloc{
+    position: absolute;
+    width: 100%;
+	
+}
+body #accueil_corps{
+    position: absolute;
+    height: 100vh;
+    width: 90%;
+    left: 5%;
+	top: 0;
+}
+body #connexion{
+	position:absolute;
+	top:25%;
+	height: 50%;
+	border:none;
+}
+body #deconnexion{
+	top: 5px;
+	cursor: pointer;
+}
+body #enregistrement{
+	position:absolute;
+	top:7.5%;
+	height: 85%;
+	border:none;
+}
+body #accordion{
+	position: absolute;
+    height: 90%;
+    width: 90%;
+    left: 5%;
+	margin-top: 35%;
+}
+body .suggestion_popop{
+	margin-top: -13px;
+	max-height: 150px;
+	background-color: white;
+	z-index: 9999;
+	overflow-y: auto;
+}
+body .loaderShowResult{
+	position:absolute;
+	top: 20%;
+	z-index: 999999999;
+	width: 80%;
+	left: 10.5%;
+	height: 80%;
+}
+body .monloader{
+	position:relative;
+	top: 45%;
+	height: 10%;
+}
+body .okBtnAdLivraison,.okBtnInfoCp{
+	color: #5cb85c;
+}
+
+/* @media only screen and (max-width: 600px) {
+	body .formAuth{
+		left: 18%;
+	}
+} */
