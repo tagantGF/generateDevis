@@ -2,18 +2,20 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html; charset=utf-8");
 require_once('../model/bigModelForMe.php');
+require_once('sendMail.php');
 
     if(isset($_POST)){
             $sequence = $_POST['sequence'];
             $numero = $_POST['numero'];
             generatePdf($numero,$sequence,$manager);
             sendMailFunction($numero);
+            echo json_encode('bien envoye');
     }
 
     function generatePdf($numero,$sequence,$manager){
         $url = "http://www.quincaillerie-feraud.fr/yzyapi/1.0.0/devis/$numero/sequences/$sequence/pdf";
         $apiKey = getApi($manager);
-        $fh = fopen("../upload/$numero.pdf", "w");
+        $fh = fopen("$numero.pdf", "w");
         $curlCh = curl_init();
         curl_setopt($curlCh, CURLOPT_URL, $url);
         curl_setopt($curlCh, CURLOPT_FILE, $fh);

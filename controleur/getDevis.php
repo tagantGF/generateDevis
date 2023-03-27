@@ -8,7 +8,7 @@ require_once('sendMail.php');
     $datess = $_POST['datess'];
     $tab = array();
 
-    $devis = getDevis($datess); 
+    $devis = getDevis($datess,$manager); 
     foreach($devis->devis as $key=>$val){
         if($val->representant->nom == $representant){
             $tab[] = $val;
@@ -18,9 +18,9 @@ require_once('sendMail.php');
     // $tab = preg_replace('#[^a-z]#i',"",$tab);
     // sort($tab);
     echo json_encode($tab);
-function getDevis($datess){
+function getDevis($datess,$manager){
     $url = "http://www.quincaillerie-feraud.fr/yzyapi/1.0.0/devis?date_creation=$datess";
-    $apiKey = "cbd89b6039ad5f28cc1b2f91a09595cd"; //getApi($manager);   // should match with Server key
+    $apiKey = getApi($manager);   // should match with Server key
     // Send request to Server
     $ch2 = curl_init();
     // To save response in a variable from server, set headers;

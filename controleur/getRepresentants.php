@@ -4,7 +4,7 @@ header("Content-Type: text/html; charset=utf-8");
 require_once('../model/bigModelForMe.php');
 
     $tab = array();
-    $devis = getDevis(); 
+    $devis = getDevis($manager); 
     foreach($devis->devis as $key=>$val){
         if($val->representant->code != ''){
             $tab[] = $val->representant->nom;
@@ -14,7 +14,7 @@ require_once('../model/bigModelForMe.php');
     //tab = preg_replace('#[^a-z]#i',"",$tab);
     sort($tab);
     echo json_encode($tab);
-function getDevis(){
+function getDevis($manager){
     $url = "http://www.quincaillerie-feraud.fr/yzyapi/1.0.0/devis";
     $apiKey = getApi($manager);   // should match with Server key
     // Send request to Server

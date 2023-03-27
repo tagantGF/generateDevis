@@ -1,6 +1,4 @@
 $(function(){
-	console.log('version','1.0.0');
-
 	function firstpage(url){
 		$.ajax({
 			url:url,
@@ -24,11 +22,19 @@ $(function(){
 				type:'post',
 				dataType:'json',
 				data:"numero="+numero+'&sequence='+sequence,
+				beforeSend:function(){
+					$('body .defaultMessageShowResult').attr('style','display:none');
+					$( "body .loaderShowResult" ).show();
+				},
 				success:function(data){
-					if(data == 'fait'){
-						sessionStorage.setItem('historiqueCmd', JSON.stringify(data));
-						th.parent().parent().parent().remove();
-						$('body').tagant_recup('controleur/getHistorique.php');
+					$( "body .loaderShowResult" ).hide();
+					if(data == 'bien envoye'){
+						$("body .message").html(
+							"<div class='alert alert-success col-xs-12 col-sm-12 col-md-12 col-lg-12'>\
+								<center>Dévis bien envoyé !</center>\
+							</div>"
+						);
+						$( "body .message").fadeIn(1000).fadeOut(5000);
 					}
 				}
 			})
