@@ -33,7 +33,8 @@ function sendMailFunction($numero){
         //Recipients
         $mail->setFrom('info-feraud@groupe-feraud.com', "Groupe-Feraud");
        
-        $mail->addAddress("y.bijaoui@groupe-feraud.com", 'Client');     //Add a recipient
+        //$mail->addAddress("y.bijaoui@groupe-feraud.com", 'Client');     //Add a recipient
+        $mail->addAddress("falahometest@gmail.com", 'Yohan');     //Add a recipient
         //$mail->addBCC('l.abidh@groupe-feraud.com');
 
 
